@@ -17,12 +17,11 @@ export default class PostList extends Component {
     return(
       <div>
       <h1>PostList</h1>
-      {this.props.posts ?
-        mappedPosts
-        :
-        <Redirect to="/login" />
-      }
-
+        {this.props.posts ?
+          mappedPosts
+          :
+          <Redirect to="/login" />
+        }
       </div>
 
     )

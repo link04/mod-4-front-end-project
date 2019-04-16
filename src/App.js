@@ -14,9 +14,27 @@ class App extends Component {
     posts:[]
   };
 
-  componentDidMount(){
-    this.getAllAvailablePosts();
-  }
+  componentDidMount = () => {
+    let token = localStorage.token;
+    token
+      ? fetch("http://localhost:3000/api/v1/current_user", {
+          method: "GET",
+          headers: {
+            "content-type": "application/json",
+            accepts: "application/json",
+            Authorization: `${token}`
+          }
+        })
+          .then(resp => resp.json())
+          .then(user => {
+            this.setState({ user }, () => {
+              console.log(user);
+              this.props.history.push("/home");
+            });
+          })
+      : this.props.history.push("/signup");
+      this.getAllAvailablePosts();
+  };
 
   signupSubmitHandler = userInfo => {
     userInfo.password_confirmation = userInfo.passwordConfirmation;
@@ -32,18 +50,25 @@ class App extends Component {
      },
      body: JSON.stringify({ user: userInfo })
    })
-     .then(resp => resp.json())
-     .then(userDataGet => {
-       if(userDataGet.ok) {
+   .then((response) => {
+      if (response.ok) {
+      return response.json();
+      } else {
+        response.json().then(shit => alert(shit.errors[0]));
+        throw new Error('Something went wrong');
+      }
+    })
+    .then(userDataGet =>
        this.setState({
-         user: userDataGet.user
+       user: userDataGet.user
        }, () =>  {
          localStorage.setItem("token", userDataGet.jwt)
-         this.props.history.push("/home")})
-       } else {
-         alert(userDataGet.errors[0]);
-       }
-     })
+         this.props.history.push("/home")
+       }))
+    .catch((error) => {
+      console.log(error)
+    });
+
 
 
  };
@@ -91,7 +116,7 @@ class App extends Component {
       user: {},
       posts:[]
     })
-      // localStorage.removeItem("token");
+      localStorage.removeItem("token");
       this.props.history.push("/login");
     }
 
@@ -102,24 +127,27 @@ class App extends Component {
           <h1>Mollify</h1>
 
           <ul>
-            {this.state.user.id > 0 ?
+            {Object.keys(this.state.user).length > 0 ? (
               <>
                 <Link to="/home">
                   <li>Home</li>
                 </Link>
-                <Link to="login" onClick={this.handleLogout}>
+                <Link to="logout" onClick={this.handleLogout}>
                   <li>Log Out</li>
                 </Link>
-                </>
+              </>
+                )
                 :
-                <>
+                (
+                  <>
                 <Link to="/signup">
                   <li>Sign Up</li>
                 </Link>
-                <Link to="/login">
+                <Link to="/login" >
                   <li>Log In</li>
                 </Link>
                 </>
+              )
             }
 
           </ul>
@@ -127,16 +155,12 @@ class App extends Component {
            <Switch>
              <Route
                path="/signup"
-               render={() => <Signup submitHandler={this.signupSubmitHandler} />}
+               render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
              />
              <Route
                exact
                path="/login"
-               render={() => <Login submitHandler={this.loginSubmitHandler} />}
-             />
-             <Route
-               path="/signup"
-               render={() => <Signup submitHandler={this.signupSubmitHandler} />}
+               render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
              />
            <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
 
