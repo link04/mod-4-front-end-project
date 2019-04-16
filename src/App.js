@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ConversationsList from './chatComponents/ConversationsList'
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 
 import Signup from "./components/Signup";
@@ -100,8 +101,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Mollify</h1>
-
-          <ul>
+          <ConversationsList />
+          {/*<ul>
             {this.state.user.id > 0 ?
               <>
                 <Link to="/home">
@@ -122,9 +123,9 @@ class App extends Component {
                 </>
             }
 
-          </ul>
+          </ul>*/}
 
-           <Switch>
+           {/*<Switch>
              <Route
                path="/signup"
                render={() => <Signup submitHandler={this.signupSubmitHandler} />}
@@ -141,7 +142,7 @@ class App extends Component {
            <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
 
              <Route path="/"  />
-           </Switch>
+           </Switch>*/}
         </header>
       </div>
     );
