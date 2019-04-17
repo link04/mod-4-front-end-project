@@ -132,44 +132,45 @@ class App extends Component {
           {/*<ul>
             {Object.keys(this.state.user).length > 0 ?
               <>
-                <Link to="/home">
-                  <li>Home</li>
-                </Link>
-                <Link to="logout" onClick={this.handleLogout}>
-                  <li>Log Out</li>
-                </Link>
+              <Link to="/home">
+              <li>Home</li>
+              </Link>
+              <Link to="logout" onClick={this.handleLogout}>
+              <li>Log Out</li>
+              </Link>
               </>
-                )
-                :
-                (
-                  <>
-                <Link to="/signup">
-                  <li>Sign Up</li>
-                </Link>
-                <Link to="/login" >
-                  <li>Log In</li>
-                </Link>
-                </>
-              )
-            }
+            )
+            :
+            (
+              <>
+              <Link to="/signup">
+              <li>Sign Up</li>
+              </Link>
+              <Link to="/login" >
+              <li>Log In</li>
+              </Link>
+              </>
+            )
+          }
 
           </ul>*/}
 
-           {/*<Switch>
-             <Route
-               path="/signup"
-               render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
-             />
-             <Route
-               exact
-               path="/login"
-               render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
-             />
-           <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
+          {/*<Switch>
+            <Route
+            path="/signup"
+            render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
+            />
+            <Route
+            exact
+            path="/login"
+            render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
+            />
+            <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
 
-             <Route path="/"  />
-           </Switch>*/}
-
+            <Route path="/"  />
+            </Switch>*/}
+    
+        <footer className="footer">FOOTER</footer>
       </div>
     );
   }

@@ -1,13 +1,16 @@
 import React from 'react';
 import NewMessageForm from './NewMessageForm';
+import Message from './Message';
 
 const MessagesArea = ({
   conversation: { id, title, messages },
 }) => {
   return (
-    <div className="messagesArea">
+    <div className="chat-container">
       <h2>{title}</h2>
-      <ul>{orderedMessages(messages)}</ul>
+      <div className="chat-box">
+        {orderedMessages(messages)}
+      </div>
       <NewMessageForm conversation_id={id} />
     </div>
   );
@@ -22,6 +25,6 @@ const orderedMessages = messages => {
     (a, b) => new Date(a.created_at) - new Date(b.created_at)
   );
   return sortedMessages.map(message => {
-    return <li key={message.id}>{message.text}</li>;
+    return <Message key={message.id} message={message} />
   });
 };

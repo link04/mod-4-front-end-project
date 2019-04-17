@@ -1,4 +1,8 @@
-body {
+* {
+  box-sizing:border-box;
+}
+
+/* body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,9 +10,131 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+/****************************************/
+/*/////////// MASTER-DETAIL ////////////*/
+/****************************************/
+.column {
+  float: left;
+  /* padding: 2%; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.conversationsList {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  overflow: auto;
+}
+
+.messagesArea {
+  display: inline-block;
+  height: 100%;
+  width: 70%;
+  padding: 4% 8%;
+}
+
+/****************************************/
+/*///////// CONVERSATIONSLIST //////////*/
+/****************************************/
+.newConversationForm {
+  background-color: rgb(242, 237, 237);
+  position: sticky;
+  top: 0px;
+}
+
+.room {
+  /* flex keeps it from overflowing */
+  display: flex;
+  background-color: rgb(223, 170, 70);
+  height: 75px;
+}
+
+.room-icon {
+  display: inline-block;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  margin: auto;
+  /* height: 100%; */
+  width: 30%;
+}
+
+.icon {
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+
+.room-content {
+  display: inline-block;
+  margin: auto;
+  /* height: 100%; */
+  width: 70%;
+}
+
+.room-content p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/****************************************/
+/*/////////// MESSAGESAREA /////////////*/
+/****************************************/
+.chat-container {
+  background-color: rgb(220, 213, 198);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  background-color: rgb(116, 117, 126);
+  overflow: auto;
+  height: 90%;
+}
+
+form {
+  height: 10%;
+}
+
+.text {
+  width: 80%;
+}
+
+.submit {
+  width: 20%;
+}
+
+/****************************************/
+/*///////////// MESSAGES ///////////////*/
+/****************************************/
+.message-box {
+  /* flex keeps it from overflowing */
+  display: flex;
+  background-color: rgb(223, 170, 70);
+  height: 75px;
+}
+
+.content-box {
+  /* display: inline-flex; */
+  /* flex-direction: column; */
+  margin: auto;
+  padding-top: 10px;
+  /* height: 50px; */
+  width: 70%;
+}
+
+.content-info {
+  display: block;
+}
+
+.content-message {
+  display: block;
+}
+
+.content-info p {
+  display: inline-block;
+  margin: 0px;
 }
