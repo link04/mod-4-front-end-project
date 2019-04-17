@@ -126,38 +126,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-          <div>
-          <ConversationsList user={this.state.user}  />
+          <NavBar history={ this.props.history} user={this.state.user} handleLogout={this.handleLogout} />
 
-          </div>
-          {/*<ul>
-            {Object.keys(this.state.user).length > 0 ?
-              <>
-              <Link to="/home">
-              <li>Home</li>
-              </Link>
-              <Link to="logout" onClick={this.handleLogout}>
-              <li>Log Out</li>
-              </Link>
-              </>
-            )
-            :
-            (
-              <>
-              <Link to="/signup">
-              <li>Sign Up</li>
-              </Link>
-              <Link to="/login" >
-              <li>Log In</li>
-              </Link>
-              </>
-            )
-          }
-
-          </ul>*/}
-
-          {/*<Switch>
+          {
+            <Switch>
             <Route
             path="/signup"
             render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
@@ -167,12 +139,18 @@ class App extends Component {
             path="/login"
             render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
             />
+            <Route
+            exact
+            path="/conversationsList"
+            render={() => <div className="master-detail"><ConversationsList  user={this.state.user}/> </div>
+          }
+            />
             <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
+            <Route path="/login"  />
+            </Switch>
+          }
 
-            <Route path="/"  />
-            </Switch>*/}
-
-        // <footer className="footer">FOOTER</footer>
+        {/* <footer className="footer">FOOTER</footer> */}
       </div>
     );
   }

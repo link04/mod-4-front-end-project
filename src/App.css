@@ -18,3 +18,13 @@
   background-color: #40e0d0;
   height: 10vh;
 }
+
+.link {
+  color: white !important;
+  cursor: pointer !important;
+  text-decoration: none;
+}
+.link:hover {
+  opacity: 0.8;
+  color:rgb(47, 191, 210) !important;
+}

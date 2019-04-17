@@ -1,5 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input, FormText , Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class Login extends React.Component {
@@ -10,37 +12,52 @@ class Login extends React.Component {
 
   changeHandler = e => {
     this.setState({
-      [e.target.placeholder]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
   submitHandler = e => {
     e.preventDefault();
     this.props.submitHandler(this.state);
-    this.setState({
-      email: "",
-      password: ""
-    });
+    if(Object.keys(this.props.user).length > 0){
+      this.setState({
+        email: "",
+        password: ""
+      });
+    }
   };
   render() {
     return (
         <>
         { !Object.keys(this.props.user).length > 0 ? (
-            <form onSubmit={this.submitHandler}>
-              <input className="uk-input uk-border-rounded"
-                type="text"
-                placeholder="email"
-                value={this.state.email}
-                onChange={this.changeHandler}
-              />
-              <input className="uk-input uk-border-rounded"
-                type="password"
-                placeholder="password"
-                value={this.state.password}
-                onChange={this.changeHandler}
-              />
-              <button className="uk-button uk-button-default">Log In</button>
-            </form>
+           <Col sm="3" md={{ size: 4, offset: 4 }}>
+            <Form className="text-center" onSubmit={this.submitHandler}>
+              <h2>Log In Form</h2>
+
+              <FormGroup>
+                <Label for="email">Email</Label>
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.changeHandler}
+                  />
+              </FormGroup>
+              <FormGroup>
+                <Label for="email">Password</Label>
+              <Input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.changeHandler}
+                />
+              </FormGroup>
+              <Button color="primary">Log In</Button>
+            </Form>
+          </Col>
+
         ) : (
         <Redirect to="/home" />
       )}

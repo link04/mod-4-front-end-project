@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, Redirect} from "react-router-dom";
 
 import {
   Collapse,
@@ -31,29 +32,39 @@ export default class NavBar extends React.Component {
     if (window.confirm("Do you really want to log out?")) {
       this.props.handleLogout();
     }
+  }
 
+  handleClickedLink = (location) => {
+    this.props.history.push(location);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/home">Mollify</NavbarBrand>
+        <Navbar  color="dark" light expand="md">
+          <NavbarBrand className="link" onClick={() => this.handleClickedLink('/home')} >
+              Mollify
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-            { !Object.keys(this.props.user).length > 0 ?
+            { Object.keys(this.props.user).length > 0 ?
               <>
               <NavItem>
-                <NavLink href="/Home/">Home</NavLink>
+                <NavLink className="link" onClick={() => this.handleClickedLink('/conversationsList')} >
+                    Conversation Channels
+                </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
+                <DropdownToggle className="link" nav caret>
+                  {this.props.user.user.name}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink onClick={this.props.handleLogout} href="/">Profile?</NavLink>
+                  <DropdownItem  className="link"  >
+                  <NavLink onClick={() => this.handleClickedLink('/home')} >
+                      Profile??
+                  </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem style={{backgroundColor: 'red', color:'white'}}  >
@@ -66,11 +77,15 @@ export default class NavBar extends React.Component {
               </>
               :
               <>
-                <NavItem>
-                  <NavLink href="/login">Log In</NavLink>
+                <NavItem onClick={() => this.handleClickedLink('/login')} >
+                  <NavLink className="link" >
+                      Log In
+                  </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="/signup">Sign Up</NavLink>
+                <NavItem onClick={() => this.handleClickedLink('/signup')} >
+                  <NavLink className="link" >
+                      Sign Up
+                  </NavLink>
                 </NavItem>
               </>
             }
