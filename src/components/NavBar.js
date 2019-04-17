@@ -58,7 +58,7 @@ export default class NavBar extends React.Component {
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle className="link" nav caret>
-                  {this.props.user.user.name}
+                  {this.props.user.name}
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem  className="link"  >

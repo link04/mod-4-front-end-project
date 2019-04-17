@@ -4,7 +4,8 @@ import { API_ROOT, HEADERS } from '../constants';
 class NewMessageForm extends React.Component {
   state = {
     text: '',
-    conversation_id: this.props.conversation_id
+    conversation_id: this.props.conversation_id,
+    user_id: this.props.user.id
   };
 
   componentWillReceiveProps = nextProps => {
@@ -17,6 +18,8 @@ class NewMessageForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    // console.log(this.props.user);
+    // debugger
 
     fetch(`${API_ROOT}/messages`, {
       method: 'POST',
@@ -33,7 +36,7 @@ class NewMessageForm extends React.Component {
           <input
             className="text"
             type="text"
-            placeHolder="Type a message..."
+            placeholder="Type a message..."
             value={this.state.text}
             onChange={this.handleChange}
           />

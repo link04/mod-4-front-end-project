@@ -2,18 +2,36 @@ import React from 'react';
 import NewMessageForm from './NewMessageForm';
 import Message from './Message';
 
-const MessagesArea = ({
-  conversation: { id, title, messages },
-}) => {
-  return (
-    <div className="chat-container">
-      <h2>{title}</h2>
-      <div className="chat-box">
-        {orderedMessages(messages)}
+class MessagesArea extends React.Component {
+
+
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  }
+
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  render(){
+    return (
+      <div className="chat-container">
+        <h2>{this.props.conversation.title}</h2>
+        <div className="chat-box">
+          {orderedMessages(this.props.conversation.messages)}
+          <div style={{ float:"left", clear: "both" }}
+               ref={(el) => { this.messagesEnd = el; }}>
+          </div>
+        </div>
+        <NewMessageForm user={this.props.user} conversation_id={this.props.conversation.id} />
       </div>
-      <NewMessageForm conversation_id={id} />
-    </div>
-  );
+    )
+  }
+
 };
 
 export default MessagesArea;

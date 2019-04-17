@@ -29,9 +29,9 @@ class App extends Component {
           }
         })
           .then(resp => resp.json())
-          .then(user => {
-            this.setState({ user }, () => {
-              console.log(user);
+          .then(userData => {
+            this.setState({ user: userData.user }, () => {
+              console.log('mounting',userData.user);
               this.props.history.push("/home");
             });
           })
@@ -127,7 +127,6 @@ class App extends Component {
     return (
       <div className="App">
           <NavBar history={ this.props.history} user={this.state.user} handleLogout={this.handleLogout} />
-
           {
             <Switch>
             <Route
@@ -142,7 +141,7 @@ class App extends Component {
             <Route
             exact
             path="/conversationsList"
-            render={() => <div className="master-detail"><ConversationsList  user={this.state.user}/> </div>
+            render={() => <div className="master-detail"><ConversationsList user={this.state.user}/> </div>
           }
             />
             <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
