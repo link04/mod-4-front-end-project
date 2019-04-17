@@ -171,7 +171,7 @@ class App extends Component {
             <Route path="/"  />
             </Switch>*/}
         </div>
-        <footer className="footer">FOOTER</footer>
+        <footer className="footer"></footer>
       </div>
     );
   }
