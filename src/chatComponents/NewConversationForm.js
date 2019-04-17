@@ -1,5 +1,7 @@
 import React from 'react';
 import { API_ROOT, HEADERS } from '../constants';
+import { Button, Form, FormGroup, Label, Input, FormText , Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NewConversationForm extends React.Component {
   state = {
@@ -23,16 +25,20 @@ class NewConversationForm extends React.Component {
   render = () => {
     return (
       <div className="newConversationForm">
-        <form onSubmit={this.handleSubmit}>
-          <label>New Conversation:</label>
-          <br />
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-          <input type="submit" />
-        </form>
+        <Form className="text-center" onSubmit={this.handleSubmit}>
+
+          <FormGroup>
+            <label>Add New Conversation Topic:</label>
+            <Input
+              name="title"
+              type="text"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+
+        <Button type="submit" color="primary" > Create Topic</Button>
+        </Form>
       </div>
     );
   };

@@ -32,7 +32,7 @@ class App extends Component {
           .then(userData => {
             this.setState({ user: userData.user }, () => {
               console.log('mounting',userData.user);
-              this.props.history.push("/home");
+              this.props.history.push("/conversationsList");
             });
           })
       : this.props.history.push("/signup");
@@ -66,7 +66,7 @@ class App extends Component {
        user: userDataGet.user
        }, () =>  {
          localStorage.setItem("token", userDataGet.jwt)
-         this.props.history.push("/home")
+         this.props.history.push("/conversationsList")
        }))
     .catch((error) => {
       console.log(error)
@@ -105,7 +105,7 @@ class App extends Component {
                 user: userDataGet
               }, () =>  {
                 localStorage.setItem("token", userData.jwt)
-                this.props.history.push("/home")})
+                this.props.history.push("/conversationsList")})
             })
           }else {
             alert("User data invalid or not existing.")
@@ -144,7 +144,6 @@ class App extends Component {
             render={() => <div className="master-detail"><ConversationsList user={this.state.user}/> </div>
           }
             />
-            <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
             <Route path="/login"  />
             </Switch>
           }

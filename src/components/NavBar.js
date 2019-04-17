@@ -43,7 +43,7 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar  color="dark" light expand="md">
-          <NavbarBrand className="link" onClick={() => this.handleClickedLink('/home')} >
+          <NavbarBrand className="link" onClick={() => this.handleClickedLink('/conversationsList')} >
               Mollify
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />

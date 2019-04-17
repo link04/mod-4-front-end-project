@@ -1,5 +1,7 @@
 import React from 'react';
 import { API_ROOT, HEADERS } from '../constants';
+import { Button, Form, FormGroup, Label, Input, FormText , Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NewMessageForm extends React.Component {
   state = {
@@ -18,8 +20,6 @@ class NewMessageForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // console.log(this.props.user);
-    // debugger
 
     fetch(`${API_ROOT}/messages`, {
       method: 'POST',
@@ -32,7 +32,7 @@ class NewMessageForm extends React.Component {
   render = () => {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <input
             className="text"
             type="text"
@@ -40,8 +40,8 @@ class NewMessageForm extends React.Component {
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input className="submit" type="submit" />
-        </form>
+        <Button className="submit" type="submit" >Send</Button>
+        </Form>
       </React.Fragment>
     );
   };

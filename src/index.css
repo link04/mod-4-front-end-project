@@ -73,6 +73,7 @@
   background-color: rgb(242, 237, 237);
   position: sticky;
   top: 0px;
+  padding:10px;
 }
 
 .room {
