@@ -127,8 +127,10 @@ class App extends Component {
     return (
       <div className="App">
           <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+          <div>
           <ConversationsList user={this.state.user}  />
 
+          </div>
           {/*<ul>
             {Object.keys(this.state.user).length > 0 ?
               <>
@@ -169,8 +171,8 @@ class App extends Component {
 
             <Route path="/"  />
             </Switch>*/}
-    
-        <footer className="footer">FOOTER</footer>
+
+        // <footer className="footer">FOOTER</footer>
       </div>
     );
   }
