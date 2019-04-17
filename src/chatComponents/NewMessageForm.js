@@ -33,7 +33,7 @@ class NewMessageForm extends React.Component {
           <input
             className="text"
             type="text"
-            placeHolder="Type a message..."
+            placeholder="Type a message..."
             value={this.state.text}
             onChange={this.handleChange}
           />

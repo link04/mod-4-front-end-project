@@ -1,16 +1,48 @@
-* {
-  box-sizing:border-box;
+/****************************************/
+/*//// FONTFACE-zinhenakokuryurdf /////*/
+/****************************************/
+@font-face {
+    font-family: 'zinhenakokuryurdf';
+    src: url('./fonts/zinhenakokuryu-rdf-webfont.woff2') format('woff2'),
+         url('./fonts/zinhenakokuryu-rdf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+@font-face {
+    font-family: 'zinhenakokuryurcf';
+    src: url('./fonts/zinhenakokuryu-rcf-webfont.woff2') format('woff2'),
+         url('./fonts/zinhenakokuryu-rcf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'zinhenabokuryurdf';
+    src: url('./fonts/zinhenabokuryu-rdf-webfont.woff2') format('woff2'),
+         url('./fonts/zinhenabokuryu-rdf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'zinhenabokuryurcf';
+    src: url('./fonts/zinhenabokuryu-rcf-webfont.woff2') format('woff2'),
+         url('./fonts/zinhenabokuryu-rcf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,400,500,600,700');
+
+* {
+  box-sizing:border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
 
 /****************************************/
 /*/////////// MASTER-DETAIL ////////////*/
@@ -48,6 +80,9 @@
   display: flex;
   background-color: rgb(223, 170, 70);
   height: 75px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .room-icon {
@@ -107,6 +142,7 @@ form {
 
 .text {
   width: 80%;
+  height: fill;
 }
 
 .submit {
@@ -145,13 +181,10 @@ form {
   padding-top: 10px;
   /* height: 50px; */
   width: 90%;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .content-info {
-  display: block;
-}
-
-.content-message {
   display: block;
 }
 
@@ -162,5 +195,23 @@ form {
 
 .username {
   padding-right: 2%;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.timestamp {
+  color: rgb(116, 117, 126);
+  font-weight: 200;
+  font-size: 0.75em;
+}
+
+.content-message {
+  display: block;
+  position: relative;
+  bottom: 10px;
+  font-weight: 300;
+}
+
+.content-message p {
+  /* margin: 0px; */
 }
