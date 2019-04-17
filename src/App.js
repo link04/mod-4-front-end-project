@@ -127,7 +127,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Mollify</h1>
         </header>
-        <div className="row master-detail">
+        <div className="master-detail">
           <ConversationsList />
 
           {/*<ul>
@@ -171,6 +171,7 @@ class App extends Component {
             <Route path="/"  />
             </Switch>*/}
         </div>
+        <footer className="footer">FOOTER</footer>
       </div>
     );
   }

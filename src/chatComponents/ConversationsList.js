@@ -44,7 +44,7 @@ class ConversationsList extends React.Component {
 
   render = () => {
     const { conversations, activeConversation } = this.state;
-    
+
     return (
       <React.Fragment>
         <div className="conversationsList column">
@@ -58,7 +58,7 @@ class ConversationsList extends React.Component {
               handleReceivedMessage={this.handleReceivedMessage}
             />
           ) : null}
-          <h2>Conversations</h2>
+          <h2>ChatRooms</h2>
           {mapConversations(conversations, this.handleClick)}
           <NewConversationForm />
         </div>
