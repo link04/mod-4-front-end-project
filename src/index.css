@@ -106,3 +106,35 @@ form {
 .submit {
   width: 20%;
 }
+
+/****************************************/
+/*///////////// MESSAGES ///////////////*/
+/****************************************/
+.message-box {
+  /* flex keeps it from overflowing */
+  display: flex;
+  background-color: rgb(223, 170, 70);
+  height: 75px;
+}
+
+.content-box {
+  /* display: inline-flex; */
+  /* flex-direction: column; */
+  margin: auto;
+  padding-top: 10px;
+  /* height: 50px; */
+  width: 70%;
+}
+
+.content-info {
+  display: block;
+}
+
+.content-message {
+  display: block;
+}
+
+.content-info p {
+  display: inline-block;
+  margin: 0px;
+}
