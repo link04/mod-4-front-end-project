@@ -28,18 +28,18 @@ class NewMessageForm extends React.Component {
 
   render = () => {
     return (
-      <div className="newMessageForm">
+      <React.Fragment>
         <form onSubmit={this.handleSubmit}>
-          <label>New Message:</label>
-          <br />
           <input
+            className="text"
             type="text"
+            placeholder="Type a message..."
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input type="submit" />
+          <input className="submit" type="submit" />
         </form>
-      </div>
+      </React.Fragment>
     );
   };
 }
