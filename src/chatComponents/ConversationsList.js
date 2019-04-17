@@ -22,7 +22,6 @@ class ConversationsList extends React.Component {
   };
 
   handleReceivedConversation = response => {
-    debugger
     const { conversation } = response;
     this.setState({
       conversations: [...this.state.conversations, conversation]
@@ -30,12 +29,15 @@ class ConversationsList extends React.Component {
   };
 
   handleReceivedMessage = response => {
+    // debugger
     const { message } = response;
     const conversations = [...this.state.conversations];
     const conversation = conversations.find(
       conversation => conversation.id === message.conversation_id
     );
     conversation.messages = [...conversation.messages, message];
+    console.log(    conversation.messages);
+    
     this.setState({ conversations });
   };
 

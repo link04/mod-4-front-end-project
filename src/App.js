@@ -7,6 +7,8 @@ import { Link, Route, Switch, withRouter } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+
 
 
 class App extends Component {
@@ -124,9 +126,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Mollify</h1>
-          <ConversationsList />
+          <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+          <ConversationsList user={this.state.user}  />
 
           {/*<ul>
             {Object.keys(this.state.user).length > 0 ?
@@ -168,7 +169,7 @@ class App extends Component {
 
              <Route path="/"  />
            </Switch>*/}
-        </header>
+
       </div>
     );
   }
