@@ -95,7 +95,7 @@
 }
 
 .room:active {
-  background-color: grey;
+  background-color: rgb(193, 144, 43);
 }
 
 .room-icon {
@@ -186,7 +186,8 @@ form {
   /* Regular User Icon */
   /* background-image: url("https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png"); */
   /* Japanese Mask Icon */
-  background-image: url("https://www.gfxmag.com/wp-content/uploads/2017/01/japanese-ogre-emoji-vector-icon.png");
+  background-image: url('./default-icon.png');
+  /* background-image: url("https://www.gfxmag.com/wp-content/uploads/2017/01/japanese-ogre-emoji-vector-icon.png"); */
   background-size: contain;
 }
 
