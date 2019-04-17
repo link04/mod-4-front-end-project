@@ -91,6 +91,7 @@
 
 .chat-box {
   background-color: rgb(116, 117, 126);
+  overflow: auto;
   height: 90%;
 }
 
