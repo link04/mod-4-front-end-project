@@ -59,6 +59,12 @@
   width: 30%;
 }
 
+.room-icon .icon {
+  /* Umbrella Icon */
+  background-image: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/japanese-umbrella-564431.png");
+  background-size: contain;
+}
+
 .icon {
   margin-left: auto;
   margin-right: auto;
@@ -117,13 +123,28 @@ form {
   height: 75px;
 }
 
+.user-icon {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* height: 100%; */
+  width: 10%;
+}
+
+.user-icon .icon {
+  /* Regular User Icon */
+  /* background-image: url("https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png"); */
+  /* Japanese Mask Icon */
+  background-image: url("https://www.gfxmag.com/wp-content/uploads/2017/01/japanese-ogre-emoji-vector-icon.png");
+  background-size: contain;
+}
+
 .content-box {
   /* display: inline-flex; */
   /* flex-direction: column; */
-  margin: auto;
   padding-top: 10px;
   /* height: 50px; */
-  width: 70%;
+  width: 90%;
 }
 
 .content-info {
@@ -137,4 +158,9 @@ form {
 .content-info p {
   display: inline-block;
   margin: 0px;
+}
+
+.username {
+  padding-right: 2%;
+  font-weight: bold;
 }
