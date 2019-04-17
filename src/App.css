@@ -3,18 +3,18 @@
 }
 
 .App-header {
-  background-color: #40e0d0;
+  /* background-color: #40e0d0; */
   height: 10vh;
   color: white;
 }
 
 .master-detail {
-  background-color: red;
+  /* background-color: red; */
   height: 80vh;
   /* padding: 2vh 2vw; */
 }
 
 .footer {
-  background-color: #40e0d0;
+  /* background-color: #40e0d0; */
   height: 10vh;
 }

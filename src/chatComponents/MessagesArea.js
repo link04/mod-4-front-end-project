@@ -7,7 +7,6 @@ const MessagesArea = ({
 }) => {
   return (
     <div className="chat-container">
-      <h2>{title}</h2>
       <div className="chat-box">
         {orderedMessages(messages)}
       </div>

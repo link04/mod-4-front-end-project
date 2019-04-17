@@ -56,11 +56,14 @@
   display: inline-block;
   height: 100%;
   width: 30%;
+  border-style: solid;
+  background-color: rgb(220, 213, 198);
   overflow: auto;
 }
 
 .messagesArea {
   display: inline-block;
+  border-style: solid;
   height: 100%;
   width: 70%;
   padding: 4% 8%;
@@ -78,11 +81,21 @@
 .room {
   /* flex keeps it from overflowing */
   display: flex;
-  background-color: rgb(223, 170, 70);
+  /* background-color: rgb(223, 170, 70); */
   height: 75px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.room:hover {
+  background-color: rgb(223, 170, 70);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.room:active {
+  background-color: grey;
 }
 
 .room-icon {
@@ -124,14 +137,17 @@
 /*/////////// MESSAGESAREA /////////////*/
 /****************************************/
 .chat-container {
-  background-color: rgb(220, 213, 198);
+  background-color: rgb(242, 237, 237);
+  border-style: solid;
+  border-color: rgb(220, 213, 198);
+  border-width: thin;
   height: inherit;
   display: flex;
   flex-direction: column;
 }
 
 .chat-box {
-  background-color: rgb(116, 117, 126);
+  background-color: rgb(242, 237, 237);
   overflow: auto;
   height: 90%;
 }
@@ -155,7 +171,6 @@ form {
 .message-box {
   /* flex keeps it from overflowing */
   display: flex;
-  background-color: rgb(223, 170, 70);
   height: 75px;
 }
 
