@@ -5,11 +5,13 @@ const MessagesArea = ({
   conversation: { id, title, messages },
 }) => {
   return (
-    <React.Fragment>
+    <div className="chat-container">
       <h2>{title}</h2>
-      <ul>{orderedMessages(messages)}</ul>
+      <div className="chat-box">
+        <ul>{orderedMessages(messages)}</ul>
+      </div>
       <NewMessageForm conversation_id={id} />
-    </React.Fragment>
+    </div>
   );
 };
 

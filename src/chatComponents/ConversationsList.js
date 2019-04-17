@@ -58,9 +58,9 @@ class ConversationsList extends React.Component {
               handleReceivedMessage={this.handleReceivedMessage}
             />
           ) : null}
+          <NewConversationForm />
           <h2>ChatRooms</h2>
           {mapConversations(conversations, this.handleClick)}
-          <NewConversationForm />
         </div>
         <div className="messagesArea column">
           {activeConversation ? (
