@@ -126,49 +126,51 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Mollify</h1>
+        </header>
+        <div className="row master-detail">
           <ConversationsList />
 
           {/*<ul>
             {Object.keys(this.state.user).length > 0 ?
               <>
-                <Link to="/home">
-                  <li>Home</li>
-                </Link>
-                <Link to="logout" onClick={this.handleLogout}>
-                  <li>Log Out</li>
-                </Link>
+              <Link to="/home">
+              <li>Home</li>
+              </Link>
+              <Link to="logout" onClick={this.handleLogout}>
+              <li>Log Out</li>
+              </Link>
               </>
-                )
-                :
-                (
-                  <>
-                <Link to="/signup">
-                  <li>Sign Up</li>
-                </Link>
-                <Link to="/login" >
-                  <li>Log In</li>
-                </Link>
-                </>
-              )
-            }
+            )
+            :
+            (
+              <>
+              <Link to="/signup">
+              <li>Sign Up</li>
+              </Link>
+              <Link to="/login" >
+              <li>Log In</li>
+              </Link>
+              </>
+            )
+          }
 
           </ul>*/}
 
-           {/*<Switch>
-             <Route
-               path="/signup"
-               render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
-             />
-             <Route
-               exact
-               path="/login"
-               render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
-             />
-           <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
+          {/*<Switch>
+            <Route
+            path="/signup"
+            render={() => <Signup user={this.state.user} submitHandler={this.signupSubmitHandler} />}
+            />
+            <Route
+            exact
+            path="/login"
+            render={() => <Login  user={this.state.user} submitHandler={this.loginSubmitHandler} />}
+            />
+            <Route path="/home" render={() => <Home post={this.state.posts} user={this.state.user} />} />
 
-             <Route path="/"  />
-           </Switch>*/}
-        </header>
+            <Route path="/"  />
+            </Switch>*/}
+        </div>
       </div>
     );
   }

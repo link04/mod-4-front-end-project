@@ -5,11 +5,11 @@ const MessagesArea = ({
   conversation: { id, title, messages },
 }) => {
   return (
-    <div className="messagesArea">
+    <React.Fragment>
       <h2>{title}</h2>
       <ul>{orderedMessages(messages)}</ul>
       <NewMessageForm conversation_id={id} />
-    </div>
+    </React.Fragment>
   );
 };
 
