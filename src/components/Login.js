@@ -31,7 +31,7 @@ class Login extends React.Component {
         <>
         { !Object.keys(this.props.user).length > 0 ? (
            <Col sm="3" md={{ size: 4, offset: 4 }}>
-            <Form className="text-center" onSubmit={this.submitHandler}>
+            <Form autoComplete="off" className="text-center" onSubmit={this.submitHandler}>
               <h2>Log In Form</h2>
 
               <FormGroup>

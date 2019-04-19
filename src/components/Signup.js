@@ -47,8 +47,8 @@ class Signup extends React.Component {
       { !Object.keys(this.props.user).length > 0 ? (
       <Col sm="3" md={{ size: 4, offset: 4 }}>
         <div className="width-form" >
-          <Form className="text-center" onSubmit={this.submitHandler}>
-            <h2>Sing Up Form</h2>
+          <Form autoComplete="off" className="text-center" onSubmit={this.submitHandler}>
+            <h2>Sign Up Form</h2>
             <FormGroup>
               <Label for="gender">Full Name</Label>
               <Input  required

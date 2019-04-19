@@ -25,11 +25,12 @@ class NewConversationForm extends React.Component {
   render = () => {
     return (
       <div className="newConversationForm">
-        <Form className="text-center" onSubmit={this.handleSubmit}>
+        <Form autoComplete="off" className="text-center" onSubmit={this.handleSubmit}>
 
           <FormGroup>
             <label>Add New Conversation Topic:</label>
             <Input
+              required
               name="title"
               type="text"
               value={this.state.title}

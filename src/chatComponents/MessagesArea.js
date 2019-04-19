@@ -18,6 +18,7 @@ class MessagesArea extends React.Component {
   }
 
   render(){
+    console.log(this.props.conversation);
     return (
       <div className="chat-container">
         <h2>{this.props.conversation.title}</h2>

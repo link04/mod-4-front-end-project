@@ -1,13 +1,11 @@
 import React from 'react';
 import { API_ROOT, HEADERS } from '../constants';
-import { Button, Form, FormGroup, Label, Input, FormText , Col} from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NewMessageForm extends React.Component {
   state = {
     text: '',
     conversation_id: this.props.conversation_id,
-    user_id: this.props.user.id
+    user_id: this.props.user.id,
   };
 
   componentWillReceiveProps = nextProps => {
@@ -32,7 +30,7 @@ class NewMessageForm extends React.Component {
   render = () => {
     return (
       <React.Fragment>
-        <Form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input
             className="text"
             type="text"
@@ -40,8 +38,8 @@ class NewMessageForm extends React.Component {
             value={this.state.text}
             onChange={this.handleChange}
           />
-        <Button className="submit" type="submit" >Send</Button>
-        </Form>
+          <input className="submit" type="submit" />
+        </form>
       </React.Fragment>
     );
   };

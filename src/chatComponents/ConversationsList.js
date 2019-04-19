@@ -31,7 +31,7 @@ class ConversationsList extends React.Component {
   };
 
   handleReceivedMessage = response => {
-
+  
     const { message } = response;
     const conversations = [...this.state.conversations];
 
@@ -45,7 +45,7 @@ class ConversationsList extends React.Component {
 
   render = () => {
     const { conversations, activeConversation } = this.state;
-  
+
     return (
       <React.Fragment>
         <div className="conversationsList column">

@@ -140,7 +140,7 @@ class App extends Component {
             />
             <Route
             exact
-            path="/conversationsList"
+            path="/conversationsList/"
             render={() => <div className="master-detail"><ConversationsList user={this.state.user}/> </div>
           }
             />

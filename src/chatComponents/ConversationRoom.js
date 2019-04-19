@@ -10,7 +10,7 @@ const ConversationRoom = (props) => {
         <div className="icon"></div>
       </div>
       <div className="room-content">
-        <p># {hypenedText}</p>
+        <p>{hypenedText}</p>
       </div>
     </div>
   )
